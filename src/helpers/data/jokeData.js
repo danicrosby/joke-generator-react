@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'https://www.getpostman.com/collections/8a29fff239520ba4c468';
+const baseURL = 'https://official-joke-api.appspot.com/random_joke';
 
 const getJokes = () => new Promise((resolve, reject) => {
   axios.get(baseURL)
