@@ -1,7 +1,14 @@
-/* eslint-disable object-curly-newline */
 import React, { useEffect, useState } from 'react';
 import './App.scss';
-import { Card, CardText, CardBody, CardTitle, Button } from 'reactstrap';
+import {
+  Card,
+  CardText,
+  CardBody,
+  Button,
+  CardHeader,
+  CardFooter,
+  Spinner
+} from 'reactstrap';
 import getJokes from '../helpers/data/jokeData';
 
 function App() {
@@ -30,15 +37,35 @@ function App() {
 
   return (
     <div className='App'>
-       <Card>
+      <h3>Joke Generator</h3>
+      <div>
+      <Spinner type="grow" color="primary" />
+      <Spinner type="grow" color="secondary" />
+      <Spinner type="grow" color="success" />
+      <Spinner type="grow" color="danger" />
+      <Spinner type="grow" color="warning" />
+      <Spinner type="grow" color="info" />
+      <Spinner type="grow" color="dark" />
+    </div>
+      <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
         <CardBody>
-          <CardTitle tag="h3">Joke Generator</CardTitle>
+        <CardHeader></CardHeader>
           <CardText>{singleJoke.setup}</CardText>
           <CardText>{punchline && singleJoke.punchline}</CardText>
-          {<Button onClick={handleClick}>{punchline ? 'Get Another Joke' : 'Answer'}</Button>}
+          {<Button color="secondary" onClick={handleClick}>{punchline ? 'Get Another Joke' : 'Answer'}</Button>}
           {singleJoke.joke}
         </CardBody>
+        <CardFooter className="text-muted"></CardFooter>
       </Card>
+      <div>
+      <Spinner type="grow" color="primary" />
+      <Spinner type="grow" color="secondary" />
+      <Spinner type="grow" color="success" />
+      <Spinner type="grow" color="danger" />
+      <Spinner type="grow" color="warning" />
+      <Spinner type="grow" color="info" />
+      <Spinner type="grow" color="dark" />
+    </div>
     </div>
   );
 }
