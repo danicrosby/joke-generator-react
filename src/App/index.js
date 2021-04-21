@@ -1,5 +1,7 @@
+/* eslint-disable object-curly-newline */
 import React, { useEffect, useState } from 'react';
 import './App.scss';
+import { Card, CardText, CardBody, CardTitle, Button } from 'reactstrap';
 import getJokes from '../helpers/data/jokeData';
 
 function App() {
@@ -28,12 +30,15 @@ function App() {
 
   return (
     <div className='App'>
-      <h3>Joke Generator</h3>
-      <p>{singleJoke.setup}</p>
-      <p>{punchline && singleJoke.punchline}</p>
-      {<button onClick={handleClick}>
-        {punchline ? 'Get Another Joke' : 'Answer'}</button>}
-      {singleJoke.joke}
+       <Card>
+        <CardBody>
+          <CardTitle tag="h3">Joke Generator</CardTitle>
+          <CardText>{singleJoke.setup}</CardText>
+          <CardText>{punchline && singleJoke.punchline}</CardText>
+          {<Button onClick={handleClick}>{punchline ? 'Get Another Joke' : 'Answer'}</Button>}
+          {singleJoke.joke}
+        </CardBody>
+      </Card>
     </div>
   );
 }
