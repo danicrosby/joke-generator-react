@@ -1,7 +1,6 @@
-# React Template
+# Joke Generator in React
 
-**Use this template to get up and running quickly on projects.**
+<img width="1416" alt="Screen Shot 2021-04-23 at 5 00 11 PM" src="https://user-images.githubusercontent.com/68397076/115933972-a6a5ef00-a455-11eb-8f49-e4906a87526e.png">
 
-This is just like the webpack template. Use it, create the repo, connect it to your local and `npm i`.
+<img width="1406" alt="Screen Shot 2021-04-23 at 5 00 22 PM" src="https://user-images.githubusercontent.com/68397076/115934002-b0c7ed80-a455-11eb-86a1-9c14db38458b.png">
 
-- [Steps to deploy](https://github.com/nss-nightclass-projects/REACT-Deployment-Netlify)
