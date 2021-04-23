@@ -7,7 +7,9 @@ import {
   Button,
   CardHeader,
   CardFooter,
-  Spinner
+  Container,
+  Row,
+  Col
 } from 'reactstrap';
 import getJokes from '../helpers/data/jokeData';
 
@@ -36,37 +38,24 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
-      <h3>Joke Generator</h3>
-      <div>
-      <Spinner type="grow" color="primary" />
-      <Spinner type="grow" color="secondary" />
-      <Spinner type="grow" color="success" />
-      <Spinner type="grow" color="danger" />
-      <Spinner type="grow" color="warning" />
-      <Spinner type="grow" color="info" />
-      <Spinner type="grow" color="dark" />
-    </div>
-      <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
-        <CardBody>
-        <CardHeader></CardHeader>
-          <CardText>{singleJoke.setup}</CardText>
-          <CardText>{punchline && singleJoke.punchline}</CardText>
-          {<Button color="secondary" onClick={handleClick}>{punchline ? 'Get Another Joke' : 'Answer'}</Button>}
-          {singleJoke.joke}
-        </CardBody>
-        <CardFooter className="text-muted"></CardFooter>
-      </Card>
-      <div>
-      <Spinner type="grow" color="primary" />
-      <Spinner type="grow" color="secondary" />
-      <Spinner type="grow" color="success" />
-      <Spinner type="grow" color="danger" />
-      <Spinner type="grow" color="warning" />
-      <Spinner type="grow" color="info" />
-      <Spinner type="grow" color="dark" />
-    </div>
-    </div>
+    <Container className='App'>
+      <h3 style={{ marginTop: '2em', marginBottom: '2em' }}>Joke Generator</h3>
+      <Row>
+        <Col sm="12" md={{ size: 6, offset: 4 }}>
+        <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333', width: '22em' }}>
+          <CardBody>
+          <CardHeader></CardHeader>
+            <CardText>{singleJoke.setup}</CardText>
+            <CardText style={{ marginTop: '1em', marginBottom: '2em' }}>{punchline && singleJoke.punchline}</CardText>
+            {<Button color="secondary" onClick={handleClick}>{punchline ? 'Get Another Joke' : 'Answer'}</Button>}
+            {singleJoke.joke}
+          </CardBody>
+          <CardFooter></CardFooter>
+        </Card>
+      </Col>
+      </Row>
+    </Container>
+
   );
 }
 
